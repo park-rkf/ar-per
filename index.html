@@ -1,11 +1,35 @@
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퍼걸러 AR 쇼룸</title>
+  <!-- 구글 모델 뷰어 스크립트 -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    /* 여백 없애고 화면 꽉 차게 만들기 */
+    body { margin: 0; padding: 0; background-color: #f0f0f0; }
+    model-viewer {
+      width: 100%;
+      height: 100vh; /* 스마트폰 화면 높이 100% 사용 */
+    }
+  </style>
+</head>
+<body>
 
-<model-viewer 
-  src="pergola.glb" 
-  ios-src="pergola.usdz" 
-  ar 
-  camera-controls>
-  <button slot="ar-button" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 15px; font-size: 16px; background-color: white; border-radius: 10px;">
-    여기를 눌러서 AR로 보기
-  </button>
-</model-viewer>
+  <!-- 주의: 아래 src="파일이름" 부분을 실제 올리신 파일명과 똑같이 맞춰주세요! -->
+  <model-viewer 
+    src="pergola.glb" 
+    ios-src="pergola.usdz" 
+    ar 
+    camera-controls
+    auto-rotate>
+    
+    <!-- AR 버튼 예쁘게 꾸미기 -->
+    <button slot="ar-button" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); padding: 15px 30px; font-size: 18px; font-weight: bold; background-color: #007AFF; color: white; border: none; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+      📷 여기를 눌러서 AR로 보기
+    </button>
+  </model-viewer>
+
+</body>
+</html>
